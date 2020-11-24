@@ -243,3 +243,12 @@ switch (input){
         console.log("Contacts Found in " + stateNum +" are:  " + searchedContacts.reduce(count,0))
         break
 }
+
+// UC11: Sort the contacts alphabetically
+console.log("Do You wish to Sort the Contacts:  \n1. YES \n2. NO")
+let inputSort = parseInt(prompt("Enter your choice:  "))
+if(inputSort == 1){
+    addressBookArray.sort();
+    for(let i = 0; i < addressBookArray.length; i++)
+        console.log(addressBookArray[i].toString())
+}
