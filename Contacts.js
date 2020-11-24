@@ -10,7 +10,7 @@ class Contact{
         this.email = params[7];
     }
 
-    get getfirstName(){ return this._firstName}
+    get firstName(){ return this._firstName}
     set firstName(firstName){
         let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z]{2,}$')
         if(nameRegex.test(firstName))
@@ -71,7 +71,22 @@ class Contact{
         else throw "Incorrect Email"
     }
 
+    toString(){
+        return "FirstName: " + this.firstName + " LastName: " + this.lastName + " Address: " + this.address + " City: " + this.city +
+                " State: " + this.state + " Zip: " + this.zip + " PhoneNO: " + this.phoneNo + " Email: " + this.email;
+    }
+
 }
 
-let contact2 = new Contact("Bahi", "Kab", "AAAA", "BBCC", "HARYANA", "233002", "91 8853503212", "abc@gmail.com")
-console.log(contact2)
+let contact1 = new Contact("Aaaaa", "Ddd", "DLFF", "GGNN", "HARYANA", "122002", "91 9953503212", "abc@gmail.com")
+let contact2 = new Contact("Pbbbbbb", "Saran", "DLFF", "ABCD", "EFGH", "580004", "91 7593797593", "efg@gmail.com")
+let contact3 = new Contact("Sssss", "Shwarma", "DLFF", "ABCD", "EFGH", "826 004", "91 4929280202", "khl@gmail.com")
+
+var addressBookArray = new Array()
+addressBookArray.push(contact1)
+addressBookArray.push(contact2)
+addressBookArray.push(contact3)    
+
+for(let i = 0; i < addressBookArray.length; i++){
+    console.log(addressBookArray[i].toString())
+}
